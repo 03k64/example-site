@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block description %}Rust: An Introduction | 2022-05-25{% endblock %}
+{% block robots %}noindex, follow{% endblock %}
+
+{% block content %}
+<main class="slides">
+    {% for slide in slides %}
+    <section class="slide-wrapper" id="slide-{{ loop.index0 }}">
+        <div class="slide-navigation">
+            {% if !loop.first %}
+            <a class="slide-navigation-link" href="#slide-{{ loop.index0 - 1 }}">&lt;</a>
+            {% endif %}
+        </div>
+        <div class="slide">
+            <h2 class="mono">{{ slide.title }}</h2>
+            {% if slide.subtitle.is_some() %}
+            <h3 class="mono">{{ slide.subtitle.as_ref().unwrap() }}</h3>
+            {% endif %}
+            <div class="slide-content">
+            {{ slide.content|safe }}
+            </div>
+            {% if slide.author.is_some() %}
+            <h4 class="mono">
+                <span>{{ slide.author.as_ref().unwrap() }}</span>
+                <span>{{ slide.date.as_ref().unwrap() }}</span>
+            </h4>
+            {% endif %}
+        </div>
+        <div class="slide-navigation">
+            {% if !loop.last %}
+            <a class="slide-navigation-link" href="#slide-{{ loop.index0 + 1 }}">&gt;</a>
+            {% endif %}
+        </div>
+    </section>
+    {% endfor %}
+</main>
+{% endblock %}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="{% block description %}{% endblock %}">
+        <meta name="robots" content="{% block robots %}{% endblock %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="/static/style.css" rel="stylesheet" type="text/css" />
+        <title>{% block title %}{{ title }} | 03k64{% endblock %}</title>
+    </head>
+    <body>
+        {% if show_header %}
+        <header>
+            <nav>
+                <h1 class="mono">
+                    <a href="/">03k64</a> | {{ title }}
+                </h1>
+            </nav>
+        </header>
+        {% endif %}
+        {% block content %}{% endblock %}
+        {% if show_footer %}
+        <footer>
+            &copy; 03k64
+        </footer>
+        {% endif %}
+    </body>
+</html>

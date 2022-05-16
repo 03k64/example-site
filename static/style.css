@@ -1,0 +1,195 @@
+/* Color */
+body {
+    background-color: #322957;
+    color: #e5e5e5;
+}
+
+header {
+    background-color: #322957;
+    box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.3);
+}
+
+a, a:link, a:visited {
+    color: #fef96a;
+}
+
+a:focus, a:hover, a:active {
+    color: #fff687;
+}
+
+pre.code-block {
+    background-color: #201745;
+}
+
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: white;
+        color: black;
+    }
+
+    header {
+        background-color: white;
+    }
+
+    a, a:link, a:visited {
+        color: black;
+    }
+
+    a:focus, a:hover, a:active {
+        color: #888;
+    }
+}
+
+/* Fonts */
+.mono {
+    font-family: Menlo, Consolas, Monaco, "Liberation Mono", "Lucida Console", monospace;
+}
+
+.sans {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 300;
+}
+
+.serif {
+    font-family: "Iowan Old Style", "Apple Garamond", Baskerville, "Times New Roman", "Droid Serif", Times, "Source Serif Pro", serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+/* Elements in `base.html` */
+* {
+    box-sizing: border-box;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+body {
+    font-family: system-mono;
+    margin: 0;
+    min-height: 100vh;
+    padding: 0;
+    width: 100vw;
+}
+
+header {
+    height: 4rem;
+    line-height: 4rem;
+    padding: 0 1rem;
+    position: sticky;
+    top: 0;
+}
+
+footer {
+    height: 3rem;
+}
+
+/* Elements in `index.html` */
+.hero {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    width: 100vw;
+}
+
+.hero ul {
+    list-style: none inside none;
+    padding: 0;
+}
+
+.hero li {
+    line-height: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero li span {
+    display: inline-block;
+    width: 1.5rem;
+}
+
+.hero li picture img {
+    height: 1.25rem;
+    vertical-align: text-bottom;
+}
+
+/* Elements in `rust-intro.html` */
+.slides {
+    overflow: hidden;
+}
+
+.slide-wrapper {
+    display: flex;
+    flex-direction: row;
+    height: calc(100vh - 4rem);
+    padding-top: 4rem;
+    width: 100vw;
+}
+
+.slide-navigation {
+    padding: 1rem 0;
+    width: 3rem;
+}
+
+.slide-navigation-link {
+    cursor: pointer;
+    display: inline-block;
+    height: 100%;
+    line-height: 100vh;
+    text-align: center;
+    width: 100%;
+}
+
+.slide {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 3rem;
+    width: calc(100vw - 6rem);
+}
+
+.slide h2 {
+    font-size: 4rem;
+    margin: 1rem 0;
+}
+
+.slide h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem 0;
+}
+
+.slide h4 {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+}
+
+.slide-content {
+    flex-grow: 1;
+    margin-top: 2rem;
+}
+
+.slide-content p,
+.slide-content li {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.slide-content pre {
+    font-size: 1.8rem;
+}
+
+.slide-content pre.inline {
+    display: inline;
+}
+
+.slide-content pre.code-block {
+    border-radius: 0.5rem;
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    width: fit-content;
+}

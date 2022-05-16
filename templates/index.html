@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block description %}03k64's home page{% endblock %}
+{% block robots %}index, follow{% endblock %}
+
+{% block content %}
+<main class="hero mono">
+    <h1>03k64</h1>
+    <ul>
+        <li>
+            <a href="https://www.github.com/03k64">
+                <span>
+                    <picture>
+                        <source height="64px" media="(prefers-color-scheme: dark)" srcset="/static/gh-light.png" type="image/png" width="64px">
+                        <source height="64px" media="(prefers-color-scheme: light)" srcset="/static/gh.png" type="image/png" width="64px">
+                        <img alt="GitHub Mark" src="/static/gh-light.png" type="image/png">
+                    </picture>
+                </span>
+                GitHub
+            </a>
+        </li>
+        <li>
+            <a href="https://www.gitlab.com/03k64">
+                <span>
+                    <picture>
+                        <source height="380px" media="(prefers-color-scheme: dark)" srcset="/static/gl-light.png" type="image/png" width="380px">
+                        <source height="380px" media="(prefers-color-scheme: light)" srcset="/static/gl.png" type="image/png" width="380px">
+                        <img alt="GitLab Logomark" src="/static/gl-light.png" type="image/png">
+                    </picture>
+                </span>
+                GitLab
+            </a>
+        </li>
+        <li>
+            <a href="https://www.linkedin.com/in/03k64">
+                <span>
+                    <picture>
+                        <source height="540px" media="(prefers-color-scheme: dark)" srcset="/static/li-light.png" type="image/png" width="635px">
+                        <source height="540px" media="(prefers-color-scheme: light)" srcset="/static/li.png" type="image/png" width="635px">
+                        <img alt="LinkedIn Logo Bug" src="/static/li-light.svg" type="image/png">
+                    </picture>
+                </span>
+                LinkedIn
+            </a>
+        </li>
+    </ul>
+</main>
+{% endblock %}
