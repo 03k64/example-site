@@ -1,0 +1,212 @@
+---
+- author: Donald Robertson
+  date: '2022-05-25'
+  subtitle: An Introduction
+  title: Rust
+- content: |
+    <ul class="sans">
+      <li>TODO</li>
+      <li>Rust is a general purpose programming language originally developed at Mozilla</li>
+      <li>
+        The <a href="https://www.rust-lang.org">official website</a> describes Rust as a "language
+        empowering everyone to build reliable and efficient software"
+      </li>
+    </ul>
+  title: What is Rust?
+- content: |
+    <ul class="sans">
+      <li>TODO</li>
+      <li>Mozilla Research, 2006</li>
+      <li>Public Announcement, July 2010</li>
+      <li>V1, May 2015</li>
+      <li>Stack Overflow Most Loved, 2016 - 202?</li>
+      <li>V1.31, Edition 2018, Dec 2018</li>
+      <li>Rust Foundation, Feb 2021
+      <li>V1.56, Edition 2021, Oct 2021</li>
+    </ul>
+  title: A Brief Timeline
+- content: |
+    <ul class="sans">
+      <li>TODO</li>
+      <li>Memory Safety, Management & Ownership</li>
+      <li>Type System</li>
+      <li>Macros</li>
+      <li>FFI</li>
+      <li>Unsafe</li>
+    </ul>
+  title: Language Features
+- content: |
+    <ul class="sans">
+      <li>TODO</li>
+      <li>Cargo</li>
+      <li>Crates</li>
+      <li>Dependency Resolution</li>
+      <li>Clippy & Rustfmt</li>
+      <li>Rust-Analyzer & IntelliJ Rust</li>
+    </ul>
+  title: Ecosystem
+- content: |
+    <ul class="sans">
+      <li>TODO</li>
+      <li>LLVM</li>
+      <li>Benchmarks: Tech Empower? Others?</li>
+      <li>Real examples? Scour the blogs</li>
+    </ul>
+  title: Performance
+- content: |
+    <ul class="sans">
+      <li>TODO</li>
+      <li>Learning curve</li>
+      <li>Others?</li>
+    </ul>
+  title: Drawbacks
+- content: |
+    <ul class="sans">
+      <li>TODO</li>
+    </ul>
+  title: Summary
+- content: |
+    <ul class="sans">
+      <li>
+        Rust is often available via system package managers, however the version they provide is not
+        always up to date which can cause issues when developing or installing existing tools from
+        source
+      </li>
+      <li>
+        Most crates will specify a <strong>Minimum Supported Rust Version</strong> (MSRV) denoting
+        the earliest compiler version for which compatibility is supported by the crate owner
+      </li>
+      <li>
+        The recommended way to install Rust is via <a href="https://www.rustup.rs/"><pre
+        class="inline">rustup</pre></a>, this is possible using the following command: <pre
+        class="code-block">$ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</pre>
+      </li>
+    </ul>
+  subtitle: For Linux & macOS
+  title: Installation
+- content: |
+    <ul class="sans">
+      <li>
+        For users of Windows the recommended method to install Rust is still via <pre
+        class="inline">rustup</pre>, but the means of obtaining <pre class="inline">rustup</pre> is
+        different
+      </li>
+      <li>
+        The installer may be obtained by visiting the <a href="https://www.rustup.rs"><pre
+        class="inline">rustup</pre> website</a> and selecting the appropriate installer for your
+        machine
+      </li>
+      <li>
+        Alternatively, users of any architecture supported by Rust may download the appropriate <pre
+        class="inline">rustup</pre> installer from those available in the <a
+        href="https://rust-lang.github.io/rustup/installation/other.html">official documentation</a>
+      </li>
+    </ul>
+  subtitle: For Windows & Other Platforms
+  title: Installation
+- content: |
+    <ul class="sans">
+      <li>
+        <pre class="inline">rust-analyzer</pre> implements the Language Server Protocol (LSP) for
+        Rust to enable IDE-like features in popular editors that support LSP
+      </li>
+      <li>
+        <pre class="inline">rust-analyzer</pre> requires the source files for the Rust standard
+        library to function, these can be installed locally via <pre class="inline">rustup</pre> as
+        follows: <pre class="code-block">rustup component add rust-src</pre>
+      </li>
+      <li>
+        Enabling integration with various popular editors is described in the <a
+        href="https://rust-analyzer.github.io/manual.html"><pre class="inline">rust-analyzer</pre>
+        documentation</a>
+      </li>
+    </ul>
+  subtitle: Rust Analyzer + ...
+  title: Development Environment
+- content: |
+    <ul class="sans">
+      <li>
+        Users of the JetBrains suite of IDEs should instead install <a
+        href="https://intellij-rust.github.io/">IntelliJ Rust</a>
+      </li>
+      <li>
+        IntelliJ Rust adds language support and enables common IDE features including code
+        completion to be used with Rust while providing integration with Cargo and a test runner
+      </li>
+      <li>
+        For maximum support, the <a href="https://www.jetbrains.com/clion/">CLion</a> IDE should be
+        used, CLion includes a Rust-compatible debugger, CPU profiler and Valgrind memcheck for Rust
+      </li>
+    </ul>
+  subtitle: JetBrains Suite
+  title: Development Environment
+- content: |
+    <ul class="sans">
+      <li>
+        <a href="https://doc.rust-lang.org/stable/book/title-page.html">The Rust Programming
+        Language</a>, commonly referred to as "The Book", is a great introduction to many features
+        of the language (and is also available in <a href="https://nostarch.com/Rust2018">print</a>)
+      </li>
+      <li>
+        The <a href="https://doc.rust-lang.org/stable/book/ch02-00-guessing-game-tutorial.html">
+        second chapter</a> provides a walkthrough of programming a guessing game in Rust
+      </li>
+      <li>
+        The complete example includes use of the <pre class="inline">cargo</pre> command-line tool,
+        handling input and writing output using the standard library and using a third-party crate
+        to include extra functionality
+      </li>
+    </ul>
+  subtitle: Guessing Game
+  title: Coding Exercise
+- content: |
+    <ul class="sans">
+      <li>
+        The increasingly rich ecosystem of packages available from <a href="https://crates.io/">
+        crates.io</a> makes it easy to be productive in a number of domains
+      </li>
+      <li>
+        An example of this is in the area of <a href="https://www.arewewebyet.org/">web
+        development</a>, an increasing number of crates provide functionality for everything from
+        front-end development (via compilation to WebAssembly) to database and third-party API
+        integrations
+      </li>
+      <li>
+        These slides are hosted on a website written using only Rust, HTML and CSS, the code is
+        available on <a href="https://www.github.com/03k64/03k64">GitHub</a> (including the on-disk
+        representation of these slides)
+      </li>
+      <li>
+        Beyond this, Rust continues to gain traction for <a
+        href="https://gitlab.com/veloren/veloren">game</a> <a href="https://bevyengine.org/">
+        development</a>, <a href="https://github.com/BurntSushi/ripgrep">command</a>-<a
+        href="https://github.com/sharkdp/fd">line</a> <a href="https://github.com/clap-rs/clap">
+        tooling</a>, <a href="https://gitlab.redox-os.org/redox-os/redox">OS</a> <a
+        href="https://lwn.net/Articles/889924/">development</a>, <a
+        href="https://github.com/smoltcp-rs/smoltcp">network</a> <a
+        href="https://github.com/cloudflare/boringtun">protocol</a> <a
+        href="https://github.com/cloudflare/quiche/">implementation</a>, ...
+      </li>
+    </ul>
+  title: Example Website
+- content: |
+    <ul class="sans">
+      <li>
+        <a href="https://doc.rust-lang.org/stable/book/title-page.html">The Book</a> (I would highly
+        encourage you to start here)
+      </li>
+      <li>
+        <a href="https://doc.rust-lang.org/nomicon/intro.html">The Nomicon</a> (for those who like
+        to live <del>dangerously</del> <pre class="inline">unsafe</pre>ly)
+      </li>
+      <li><a href="https://users.rust-lang.org/">Rust User Forum</a></li>
+      <li><a href="https://play.rust-lang.org/">Rust Playground</a></li>
+      <li><a href="https://crates.io/">Crates</a></li>
+      <li><a href="https://this-week-in-rust.org">This Week in Rust</a></li>
+    </ul>
+  title: Useful Resources
+- content: |
+    <ul class="sans">
+      <li>TODO</li>
+    </ul>
+  title: Conclusion
