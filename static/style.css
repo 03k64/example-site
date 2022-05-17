@@ -54,6 +54,14 @@ pre.code-block {
     font-family: "Iowan Old Style", "Apple Garamond", Baskerville, "Times New Roman", "Droid Serif", Times, "Source Serif Pro", serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
+/* Block Elements */
+pre.code-block {
+    border-radius: 0.5rem;
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    width: fit-content;
+}
+
 /* Elements in `base.html` */
 * {
     box-sizing: border-box;
@@ -88,7 +96,7 @@ footer {
     height: 3rem;
 }
 
-/* Elements in `index.html` */
+/* Elements in `index.html` and `error.html` */
 .hero {
     align-items: center;
     display: flex;
@@ -96,6 +104,10 @@ footer {
     height: 100vh;
     justify-content: center;
     width: 100vw;
+}
+
+.hero h1 {
+    margin-bottom: 2rem;
 }
 
 .hero ul {
@@ -187,9 +199,3 @@ footer {
     display: inline;
 }
 
-.slide-content pre.code-block {
-    border-radius: 0.5rem;
-    margin-top: 0.5rem;
-    padding: 0.5rem 1rem;
-    width: fit-content;
-}

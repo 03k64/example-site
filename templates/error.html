@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block description %}Error{% endblock %}
+{% block robots %}noindex, nofollow{% endblock %}
+
+{% block content %}
+<main class="hero mono">
+    <h1>Error</h1>
+    <pre class="code-block">{{ error }}</pre>
+</main>
+{% endblock %}

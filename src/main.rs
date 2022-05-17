@@ -1,6 +1,7 @@
 use actix_files::Files;
 use actix_web::{
-    get, http::StatusCode, web::Path, App, HttpResponse, HttpServer, Responder, ResponseError,
+    get, http::StatusCode, middleware::Logger, web, web::Path, App, HttpRequest, HttpResponse,
+    HttpServer, Responder, ResponseError,
 };
 use anyhow::Context;
 use askama_actix::{Template, TemplateToResponse};
@@ -39,11 +40,41 @@ impl Debug for SiteError {
 
 impl ResponseError for SiteError {
     fn error_response(&self) -> HttpResponse {
-        match self {
-            Self::InvalidSlidesError(_) => HttpResponse::new(StatusCode::INTERNAL_SERVER_ERROR),
-            Self::MissingSlidesError(_) => HttpResponse::new(StatusCode::NOT_FOUND),
-        }
+        log::error!("{}", self);
+
+        let mut error_page = ErrorPage {
+            show_footer: true,
+            show_header: false,
+            title: "Error".to_owned(),
+            ..Default::default()
+        };
+
+        let error_status = match self {
+            Self::InvalidSlidesError(e) => {
+                error_page.error = format!("{:?}", e);
+                StatusCode::INTERNAL_SERVER_ERROR
+            }
+            Self::MissingSlidesError(e) => {
+                error_page.error = format!("{:?}", e);
+                StatusCode::NOT_FOUND
+            }
+        };
+
+        let mut response = error_page.to_response();
+        let status = response.status_mut();
+        *status = error_status;
+
+        response
     }
+}
+
+#[derive(Default, Template)]
+#[template(path = "error.html")]
+struct ErrorPage {
+    error: String,
+    show_footer: bool,
+    show_header: bool,
+    title: String,
 }
 
 #[derive(Default, Template)]
@@ -75,11 +106,15 @@ struct Slides {
 
 #[actix_web::main]
 async fn main() -> io::Result<()> {
+    env_logger::init();
+
     HttpServer::new(move || {
         App::new()
             .service(index)
             .service(presentation)
             .service(Files::new("/static", "./static"))
+            .default_service(web::to(not_found))
+            .wrap(Logger::default())
     })
     .bind("0.0.0.0:8080")?
     .run()
@@ -116,4 +151,14 @@ async fn presentation(title: Path<String>) -> HttpResult {
     .to_response();
 
     Ok(response)
+}
+
+async fn not_found(request: HttpRequest) -> HttpResponse {
+    ErrorPage {
+        error: format!("No matching route for {}", request.uri()),
+        show_footer: true,
+        show_header: false,
+        title: "Error".to_owned(),
+    }
+    .to_response()
 }
