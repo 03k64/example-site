@@ -38,31 +38,6 @@
 - content: |
     <ul class="sans">
       <li>TODO</li>
-      <li>Cargo</li>
-      <li>Crates</li>
-      <li>Dependency Resolution</li>
-      <li>Clippy & Rustfmt</li>
-      <li>Rust-Analyzer & IntelliJ Rust</li>
-    </ul>
-  title: Ecosystem
-- content: |
-    <ul class="sans">
-      <li>TODO</li>
-      <li>LLVM</li>
-      <li>Benchmarks: Tech Empower? Others?</li>
-      <li>Real examples? Scour the blogs</li>
-    </ul>
-  title: Performance
-- content: |
-    <ul class="sans">
-      <li>TODO</li>
-      <li>Learning curve</li>
-      <li>Others?</li>
-    </ul>
-  title: Drawbacks
-- content: |
-    <ul class="sans">
-      <li>TODO</li>
     </ul>
   title: Summary
 - content: |
@@ -71,10 +46,6 @@
         Rust is often available via system package managers, however the version they provide is not
         always up to date which can cause issues when developing or installing existing tools from
         source
-      </li>
-      <li>
-        Most crates will specify a <strong>Minimum Supported Rust Version</strong> (MSRV) denoting
-        the earliest compiler version for which compatibility is supported by the crate owner
       </li>
       <li>
         The recommended way to install Rust is via <a href="https://www.rustup.rs/"><pre
@@ -109,11 +80,6 @@
       <li>
         <pre class="inline">rust-analyzer</pre> implements the Language Server Protocol (LSP) for
         Rust to enable IDE-like features in popular editors that support LSP
-      </li>
-      <li>
-        <pre class="inline">rust-analyzer</pre> requires the source files for the Rust standard
-        library to function, these can be installed locally via <pre class="inline">rustup</pre> as
-        follows: <pre class="code-block">rustup component add rust-src</pre>
       </li>
       <li>
         Enabling integration with various popular editors is described in the <a
@@ -173,7 +139,7 @@
       </li>
       <li>
         These slides are hosted on a website written using only Rust, HTML and CSS, the code is
-        available on <a href="https://www.github.com/03k64/03k64">GitHub</a> (including the on-disk
+        available on <a href="https://www.github.com/03k64/example-site">GitHub</a> (including the on-disk
         representation of these slides)
       </li>
       <li>
@@ -189,6 +155,16 @@
       </li>
     </ul>
   title: Example Website
+- content: |
+    <ul class="sans">
+      <li>TODO</li>
+      <li>Cargo</li>
+      <li>Crates</li>
+      <li>Dependency Resolution</li>
+      <li>Clippy & Rustfmt</li>
+      <li>Rust-Analyzer & IntelliJ Rust</li>
+    </ul>
+  title: Ecosystem
 - content: |
     <ul class="sans">
       <li>
