@@ -15,14 +15,12 @@
   title: What is Rust?
 - content: |
     <ul class="sans">
-      <li>TODO</li>
-      <li>Mozilla Research, 2006</li>
-      <li>Public Announcement, July 2010</li>
-      <li>V1, May 2015</li>
-      <li>Stack Overflow Most Loved, 2016 - 202?</li>
-      <li>V1.31, Edition 2018, Dec 2018</li>
-      <li>Rust Foundation, Feb 2021
-      <li>V1.56, Edition 2021, Oct 2021</li>
+      <li><a href="http://venge.net/graydon/talks/intro-talk-2.pdf">Publicly announced</a> at the Mozilla Annual Summit in 2010</li>
+      <li><a href="https://blog.rust-lang.org/2015/05/15/Rust-1.0.html">Reached version 1.0.0</a> in May 2015</li>
+      <li>Rust is named the most loved programming language by <a href="https://insights.stackoverflow.com/survey/2016#technology-most-loved-dreaded-and-wanted">the annual Stack Overflow developer survey</a> for the first time in 2016</li>
+      <li><a href="https://blog.rust-lang.org/2018/12/06/Rust-1.31-and-rust-2018.html">Rust v1.31 is released</a> marking the first new "edition" of the language since v1.0.0 in December 2018</li>
+      <li>The <a href="https://foundation.rust-lang.org/news/2021-02-08-hello-world/">Rust Foundation</a> is announced in February 2021</li>
+      <li><a href="https://blog.rust-lang.org/2021/10/21/Rust-1.56.0.html"> Rust v1.56 is released</a> as the most recent edition of the language in October 2021</li>
     </ul>
   title: A Brief Timeline
 - content: |
@@ -78,8 +76,9 @@
       </li>
       <li>
         The recommended way to install Rust is via <a href="https://www.rustup.rs/"><pre
-        class="inline">rustup</pre></a>, this is possible using the following command: <pre
-        class="code-block">$ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</pre>
+        class="inline">rustup</pre></a> by running the below command and selecting the default
+        installation option when prompted: <pre class="code-block">$ curl --proto '=https' --tlsv1.2
+        -sSf https://sh.rustup.rs | sh</pre>
       </li>
     </ul>
   subtitle: For Linux & macOS
