@@ -58,6 +58,7 @@ pre.code-block {
 pre.code-block {
     border-radius: 0.5rem;
     margin-top: 0.5rem;
+    margin-left: -8rem;
     padding: 0.5rem 1rem;
     width: fit-content;
 }
@@ -139,6 +140,7 @@ footer {
     display: flex;
     flex-direction: row;
     height: calc(100vh - 4rem);
+    justify-content: space-between;
     padding-top: 4rem;
     width: 100vw;
 }
@@ -162,6 +164,7 @@ footer {
     flex-direction: column;
     padding: 1rem 3rem;
     width: calc(100vw - 6rem);
+    width: 120ch;
 }
 
 .slide h2 {
@@ -171,7 +174,7 @@ footer {
 
 .slide h3 {
     font-size: 2rem;
-    margin-bottom: 1rem 0;
+    margin-bottom: 1rem;
 }
 
 .slide h4 {
@@ -187,6 +190,8 @@ footer {
 
 .slide-content p,
 .slide-content li {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 300;
     font-size: 2rem;
     margin-bottom: 2rem;
 }

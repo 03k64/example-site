@@ -1,0 +1,61 @@
+- what is rust?
+  - techniques that provide memory safety also lend themselves to thread safety
+  - techniques are enforced as part of compilation rather than being best practice to adhere to
+  - ideas in rust are not necessarily new but it tries to take the best lessons from previous languages
+    including C++, Haskell, ML/OCaml, Erlang, Java, C# and among others
+
+- ownership
+  - (in general) all values in Rust have a single variable that acts as an owner
+  - ownership may be reassigned (or moved in Rust parlance)
+  - when the owning variable goes out of scope the value is dropped and any associated memory is freed
+    - this is enforced at compile time, instructions to deallocate memory are added by the compiler
+
+- borrowing
+  - values may be borrowed using _references_ to the owning variable
+  - multiple, immutable references or a single, mutable reference may exist simultaneously
+    - simultaneously here is in terms of _execution scope_ rather than _time_
+    - compiler enforces rules around number and mutability of borrows
+    - compiler also disallows any attempt to mutate a value using an immutable reference
+  - ownership is not impacted by borrowing
+
+- ownership and borrowing
+  - enables memory safety, ie. eliminates dangling pointers, use after free, double move
+  - enables thread safety, ie. eliminates data races
+
+- type system
+  - user-defined data represented as structs or enums
+  - behaviour can be defined alongside data (impl block), it can be defined in a shared way - ie. traits
+    - traits can provide a default implementation and declare associated types
+  - data and behaviour can be parameterized using generics
+    - generics themselves can be constrained to those implementing certain behaviours, linked to composition
+    - at compile time, monomorphization is used to generate a per-type version of a function
+      - improves performance at the cost of binary size
+  - composition over inheritance
+    - no method for inheritance is present in Rust
+    - instead encouraged to implement behaviours and write functions that require those in place of concrete data
+
+- macros
+  - metaprogramming: simplistically -> code that outputs code
+
+- ffi: what languages are covered, how many are bidirectional
+
+- unsafe
+  - language keyword defining a scope in which compiler checks are relaxed
+    - in an unsafe block you can:
+      - dereference a raw pointer
+      - call unsafe functions or methods
+      - access or modify a mutable static variable
+      - implement an unsafe trait
+      - access fields of union types
+    - using unsafe does _not_ turn off the borrow checker or disable any other safety checks
+  - unsafe blocks are usually wrapped in safe abstractions which limits the ability for the unsafe behaviour to leak
+
+- personal experience
+  - correctness here meaning compliance with rules around safety enforced by the compiler
+  - in general, if a program compiles then it will run successfully (subject to I/O issues, incorrect logic)
+  - compiler is like having a paired programmer in some respect
+  - ecosystem which I'll touch on later, covers various domains
+  - community has always been helpful to me
+    - official forums
+    - per-project communities
+    - in-person at conferences

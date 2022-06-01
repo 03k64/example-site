@@ -1,20 +1,32 @@
 ---
 - author: Donald Robertson
-  date: '2022-05-25'
-  subtitle: An Introduction
+  date: '2022-06-01'
   title: Rust
-- content: |
-    <ul class="sans">
-      <li>TODO</li>
-      <li>Rust is a general purpose programming language originally developed at Mozilla</li>
+  subtitle: An Introduction
+- title: About Me
+  content: |
+    <ul>
+      <li>I am a final year PhD student working on network transports and streaming media</li>
+      <li>I am also a professional software engineer with approximately 7 years of industry experience</li>
+      <li>I have been programming in Rust as a hobby for around 6 years</li>
+      <li>I am <em>not</em> an expert on programming languages</li>
+    </ul>
+- title: What is Rust?
+  content: |
+    <ul>
+      <li>Rust is a <s>systems</s> general purpose programming language</li>
       <li>
-        The <a href="https://www.rust-lang.org">official website</a> describes Rust as a "language
-        empowering everyone to build reliable and efficient software"
+        The <a href="https://www.rust-lang.org/">official website</a> describes Rust as 'a language empowering everyone
+        to build reliable and efficient software'
+      </li>
+      <li>
+        The language provides memory safety without the need for manual memory management or execution-time overheads
+        like a runtime or garbage collection
       </li>
     </ul>
-  title: What is Rust?
-- content: |
-    <ul class="sans">
+- title: A Brief Timeline
+  content: |
+    <ul>
       <li><a href="http://venge.net/graydon/talks/intro-talk-2.pdf">Publicly announced</a> at the Mozilla Annual Summit in 2010</li>
       <li><a href="https://blog.rust-lang.org/2015/05/15/Rust-1.0.html">Reached version 1.0.0</a> in May 2015</li>
       <li>Rust is named the most loved programming language by <a href="https://insights.stackoverflow.com/survey/2016#technology-most-loved-dreaded-and-wanted">the annual Stack Overflow developer survey</a> for the first time in 2016</li>
@@ -22,24 +34,44 @@
       <li>The <a href="https://foundation.rust-lang.org/news/2021-02-08-hello-world/">Rust Foundation</a> is announced in February 2021</li>
       <li><a href="https://blog.rust-lang.org/2021/10/21/Rust-1.56.0.html"> Rust v1.56 is released</a> as the most recent edition of the language in October 2021</li>
     </ul>
-  title: A Brief Timeline
-- content: |
-    <ul class="sans">
-      <li>TODO</li>
-      <li>Memory Safety, Management & Ownership</li>
-      <li>Type System</li>
-      <li>Macros</li>
-      <li>FFI</li>
-      <li>Unsafe</li>
+- title: Language Features
+  subtitle: Memory Safety
+  content: |
+    <ul>
+      <li>Ownership and borrowing</li>
+      <li>Rules are enforced at compile-time</li>
+      <li>Guarantees the absence of null pointers, dangling pointers (use-after-free), iterator invalidation and data races</li>
+      <li>Avoids the need for runtime overheads such as a language runtime or garbage collection</li>
     </ul>
-  title: Language Features
-- content: |
-    <ul class="sans">
-      <li>TODO</li>
+- title: Language Features
+  subtitle: Type System
+  content: |
+    <ul>
+      <li>Separation of data and behaviour</li>
+      <li>Type inference but explicit mutability</li>
+      <li>Generics and monomorphization</li>
+      <li>Composition over inheritance</li>
     </ul>
-  title: Summary
-- content: |
-    <ul class="sans">
+- title: Language Features
+  subtitle: Macros, FFI and Unsafe
+  content: |
+    <ul>
+      <li>Macros provide metaprogramming capabilities</li>
+      <li>FFI provides bi-directional interop with other languages</li>
+      <li>Unsafe allows <em>some</em> of the safety checks to be disabled</li>
+    </ul>
+- title: Personal Experience
+  content: |
+    <ul>
+      <li>Rust does more than any language I have used to guide you towards correctness</li>
+      <li>Ecosystem is increasingly broad and generally high quality</li>
+      <li>Community is incredibly welcoming and enthusiastic</li>
+    </ul>
+- title: Questions?
+- title: Installation
+  subtitle: For Linux and macOS
+  content: |
+    <ul>
       <li>
         Rust is often available via system package managers, however the version they provide is not
         always up to date which can cause issues when developing or installing existing tools from
@@ -48,14 +80,14 @@
       <li>
         The recommended way to install Rust is via <a href="https://www.rustup.rs/"><pre
         class="inline">rustup</pre></a> by running the below command and selecting the default
-        installation option when prompted: <pre class="code-block">$ curl --proto '=https' --tlsv1.2
-        -sSf https://sh.rustup.rs | sh</pre>
+        installation option when prompted:
+        <pre class="code-block">$ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</pre>
       </li>
     </ul>
-  subtitle: For Linux & macOS
-  title: Installation
-- content: |
-    <ul class="sans">
+- title: Installation
+  subtitle: For Windows and Other Platforms
+  content: |
+    <ul>
       <li>
         For users of Windows the recommended method to install Rust is still via <pre
         class="inline">rustup</pre>, but the means of obtaining <pre class="inline">rustup</pre> is
@@ -72,10 +104,10 @@
         href="https://rust-lang.github.io/rustup/installation/other.html">official documentation</a>
       </li>
     </ul>
-  subtitle: For Windows & Other Platforms
-  title: Installation
-- content: |
-    <ul class="sans">
+- title: Development Environment
+  subtitle: Rust Analyzer + ...
+  content: |
+    <ul>
       <li>
         <pre class="inline">rust-analyzer</pre> implements the Language Server Protocol (LSP) for
         Rust to enable IDE-like features in popular editors that support LSP
@@ -86,10 +118,10 @@
         documentation</a>
       </li>
     </ul>
-  subtitle: Rust Analyzer + ...
-  title: Development Environment
-- content: |
-    <ul class="sans">
+- title: Development Environment
+  subtitle: JetBrains IDEs
+  content: |
+    <ul>
       <li>
         Users of the JetBrains suite of IDEs should instead install <a
         href="https://intellij-rust.github.io/">IntelliJ Rust</a>
@@ -103,10 +135,10 @@
         used, CLion includes a Rust-compatible debugger, CPU profiler and Valgrind memcheck for Rust
       </li>
     </ul>
-  subtitle: JetBrains Suite
-  title: Development Environment
-- content: |
-    <ul class="sans">
+- title: Coding Exercise
+  subtitle: A Guessing Game
+  content: |
+    <ul>
       <li>
         <a href="https://doc.rust-lang.org/stable/book/title-page.html">The Rust Programming
         Language</a>, commonly referred to as "The Book", is a great introduction to many features
@@ -122,10 +154,9 @@
         to include extra functionality
       </li>
     </ul>
-  subtitle: Guessing Game
-  title: Coding Exercise
-- content: |
-    <ul class="sans">
+- title: Example Website
+  content: |
+    <ul>
       <li>
         The increasingly rich ecosystem of packages available from <a href="https://crates.io/">
         crates.io</a> makes it easy to be productive in a number of domains
@@ -153,19 +184,16 @@
         href="https://github.com/cloudflare/quiche/">implementation</a>, ...
       </li>
     </ul>
-  title: Example Website
-- content: |
-    <ul class="sans">
-      <li>TODO</li>
-      <li>Cargo</li>
-      <li>Crates</li>
-      <li>Dependency Resolution</li>
-      <li>Clippy & Rustfmt</li>
-      <li>Rust-Analyzer & IntelliJ Rust</li>
+- title: Ecosystem and Tooling
+  content: |
+    <ul>
+      <li><pre class="inline">cargo</pre> and <a href="https://www.crates.io/">Crates</a></li>
+      <li>Rust-Analyzer and IntelliJ Rust</li>
+      <li>Clippy and Rustfmt</li>
     </ul>
-  title: Ecosystem
-- content: |
-    <ul class="sans">
+- title: Useful Resources
+  content: |
+    <ul>
       <li>
         <a href="https://doc.rust-lang.org/stable/book/title-page.html">The Book</a> (I would highly
         encourage you to start here)
@@ -179,9 +207,10 @@
       <li><a href="https://crates.io/">Crates</a></li>
       <li><a href="https://this-week-in-rust.org">This Week in Rust</a></li>
     </ul>
-  title: Useful Resources
-- content: |
-    <ul class="sans">
-      <li>TODO</li>
+- title: Summary
+  content: |
+    <ul>
+      <li>Rust is a programming language with a focus on creating robust software without sacrificing performance</li>
+      <li>Thank you for attending!</li>
     </ul>
-  title: Conclusion
+    <img alt="Ferris, the unofficial mascot of Rust" src="/static/ferris.svg" style="float: right" width="480px" />
