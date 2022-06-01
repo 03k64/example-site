@@ -139,8 +139,8 @@ footer {
 .slide-wrapper {
     display: flex;
     flex-direction: row;
-    height: calc(100vh - 4rem);
     justify-content: space-between;
+    min-height: calc(100vh - 4rem);
     padding-top: 4rem;
     width: 100vw;
 }
@@ -163,7 +163,6 @@ footer {
     display: flex;
     flex-direction: column;
     padding: 1rem 3rem;
-    width: calc(100vw - 6rem);
     width: 120ch;
 }
 
