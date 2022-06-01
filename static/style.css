@@ -38,6 +38,10 @@ pre.code-block {
     a:focus, a:hover, a:active {
         color: #888;
     }
+
+    pre.code-block {
+        background-color: white;
+    }
 }
 
 /* Fonts */
